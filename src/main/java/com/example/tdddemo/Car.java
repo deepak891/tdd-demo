@@ -1,9 +1,6 @@
 package com.example.tdddemo;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Car {
@@ -11,8 +8,12 @@ public class Car {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @Column
     private String name;
+    @Column
     private String type;
+    @Column
+    private String model;
 
     public Car() {
     }
@@ -36,5 +37,13 @@ public class Car {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public void setModel(String model) {
+        this.model = model;
     }
 }
